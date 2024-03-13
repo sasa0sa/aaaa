@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+  }
