@@ -14,6 +14,20 @@
 
     <body>
     <div> 
+    <?php
+$url = 'http://localhost:3000/news';
+$datos = json_decode(file_get_contents($url), true);
+
+// Verifica si $datos no es null y si es un array
+if ($datos && is_array($datos)) {
+    foreach ($datos as $dato) {
+        echo $dato['nom'] . '<br>';
+    }
+} else {
+    echo "No se pudieron obtener datos de la URL: $url";
+}
+?>
+
     <header class="absolute inset-x-0 top-0 z-50">
     <nav class="items-center justify-between p-6 lg:px-8 flex flex-row-2" aria-label="Global">
         <div class="flex lg:flex-1 items-center">
@@ -23,11 +37,7 @@
             </a>
         </div>
         
-        <div class="hidden lg:flex lg:gap-x-16 pl-10 flex flex-row items-center flex-grow">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Informació</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Llocs d'interés</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Altra informació</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Treballadors</a>
+      
             <!-- component -->
             <div class="relative hover-trigger text-sm font-semibold leading-6 text-gray-900">
             <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 animate-pulse" width="24" height="24"><path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"/></svg>
